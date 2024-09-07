@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+}
+
+#body #filterMenu #select-option #select, #header #filterMenu #select-option #select {
+  font-size: 14px;
+  outline: none;
+  padding-left: 10px;
+  padding-right: 100px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border-radius: 5px;
+  border-color: #1f1f1f;
+  cursor: pointer;
+}
+
+#body #filterMenu, #header #filterMenu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  #body #filterMenu, #header #filterMenu {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+}
+
+#header #filterMenu #select-option {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  #header #filterMenu #select-option {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+#header #Slider {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#header #Slider #activeCategories {
+  cursor: pointer;
+  background-color: #1f1f1f;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+  border-radius: 5px;
+}
+#header #Slider #categories {
+  cursor: pointer;
+  background-color: #f7f7f7;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #1f1f1f;
+  border-radius: 5px;
+}
+
+#body #filterMenu #categoryName {
+  font-size: 24px;
+  font-weight: 600;
+}
+#body #filterMenu #select-option {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  #body #filterMenu #select-option {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+#body #cardDiv {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+@media (max-width: 768px) {
+  #body #cardDiv {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  #body #cardDiv {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+#body #cardDiv #itemCard {
+  cursor: pointer;
+  border: 2px solid #f8f8f8;
+  border-radius: 10px;
+  overflow: hidden;
+}
+#body #cardDiv #itemCard #imgDiv {
+  position: relative;
+  height: 100px;
+  width: 100%;
+}
+#body #cardDiv #itemCard #imgDiv #image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#body #cardDiv #itemCard #imgDiv #price {
+  font-weight: 600;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+}
+#body #cardDiv #itemCard #itemName {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #1f1f1f;
+  font-weight: 500;
+}
+
+#modalContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: hidden;
+}
+#modalContainer #modal {
+  background-color: white;
+  color: black;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  max-width: 80%;
+  max-height: 80%;
+  overflow-y: auto;
+  display: flex;
+  gap: 25px;
+}
+@media (max-width: 768px) {
+  #modalContainer #modal {
+    padding: 10px;
+    max-width: 90%;
+    max-height: 90%;
+    gap: 10px;
+  }
+}
+#modalContainer #modal #modalImage {
+  width: 50%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  #modalContainer #modal #modalImage {
+    width: 35%;
+  }
+}
+#modalContainer #modal #modalDescriptionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+}
+#modalContainer #modal #modalDescriptionContainer #modalTextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#modalContainer #modal #modalDescriptionContainer #modalTextContainer .modalItemName {
+  color: #404040;
+}
+@media (max-width: 768px) {
+  #modalContainer #modal #modalDescriptionContainer #modalTextContainer .modalItemName {
+    font-size: 16px;
+  }
+}
+#modalContainer #modal #modalDescriptionContainer #modalTextContainer .modalItemCategory {
+  color: #8d8d8d;
+}
+@media (max-width: 768px) {
+  #modalContainer #modal #modalDescriptionContainer #modalTextContainer .modalItemCategory {
+    font-size: 14px;
+  }
+}
+#modalContainer #modal #modalDescriptionContainer #modalTextContainer .modalItemPrice {
+  font-weight: 600;
+  font-size: 20px;
+}
+@media (max-width: 768px) {
+  #modalContainer #modal #modalDescriptionContainer #modalTextContainer .modalItemPrice {
+    font-size: 14px;
+  }
+}
+#modalContainer #modal #modalDescriptionContainer #modalCounter {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+#modalContainer #modal #modalDescriptionContainer #modalCounter #modalCounterButton {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: none;
+  font-size: 20px;
+  background-color: transparent;
+}
+@media (max-width: 768px) {
+  #modalContainer #modal #modalDescriptionContainer #modalCounter #modalCounterButton {
+    font-size: 14px;
+  }
+}
+#modalContainer #modal #modalDescriptionContainer #modalCounter .modalCountText {
+  font-size: 20px;
+}
+@media (max-width: 768px) {
+  #modalContainer #modal #modalDescriptionContainer #modalCounter .modalCountText {
+    font-size: 16px;
+  }
+}
+#modalContainer #modal #modalDescriptionContainer #modalList {
+  margin-left: 20px;
+  list-style: disc;
+  color: #8d8d8d;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media (max-width: 768px) {
+  #modalContainer #modal #modalDescriptionContainer #modalList {
+    font-size: 10px;
+  }
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,21 @@
+%select {
+  font-size: 14px;
+  outline: none;
+  padding-left: 10px;
+  padding-right: 100px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border-radius: 5px;
+  border-color: $clickButtonBg;
+  cursor: pointer;
+}
+%filterMenu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+}
